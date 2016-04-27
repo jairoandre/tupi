@@ -37,7 +37,7 @@ public class Screen extends Bitmap {
             gamePanel.draw(testBitmap, (gamePanel.width - 64) / 2 + x0, (gamePanel.height - 64) / 2 + y0);
         }
 
-        viewport.renderFloor();
+        viewport.render(game);
         draw(viewport, 0, 0);
         draw(gamePanel, 0, height - PANEL_HEIGHT);
         //draw(testBitmap, 40, 40);
