@@ -88,10 +88,9 @@ public class TupiComponent extends Canvas implements Runnable {
             }
 
             // if (ticked) {
-                render();
-                frames++;
+            render();
+            frames++;
             // }
-
 
 
         }

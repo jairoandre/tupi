@@ -24,9 +24,7 @@ public class Bitmap {
                 if (xPix < 0 || xPix >= width) continue;
 
                 int src = bitmap.pixels[x + y * bitmap.width];
-
-                if (src > 0)
-                    pixels[xPix + yPix * width] = src;
+                pixels[xPix + yPix * width] = src;
             }
 
         }

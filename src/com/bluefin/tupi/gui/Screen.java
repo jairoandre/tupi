@@ -1,5 +1,6 @@
 package com.bluefin.tupi.gui;
 
+import com.bluefin.tupi.Art;
 import com.bluefin.tupi.Game;
 
 import java.util.Random;
@@ -18,18 +19,15 @@ public class Screen extends Bitmap {
         super(width, height);
         gamePanel = new Bitmap(width, PANEL_HEIGHT);
         viewport = new Bitmap3D(width, height - PANEL_HEIGHT);
-        Random random = new Random();
-        testBitmap = new Bitmap(64, 64);
-        for (int i = 0; i < 64 * 64; i++) {
-            testBitmap.pixels[i] = random.nextInt() * (1 - random.nextInt(5) / 4);
-        }
+        testBitmap = Art.panel;
     }
 
     int time = 0;
+
     public void render(Game game) {
         time++;
 
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             //int x0 = (int) (Math.sin((System.currentTimeMillis() + i*10) % 2000 / 2000.0 * Math.PI * 2) * 100);
             //int y0 = (int) (Math.cos((System.currentTimeMillis() + i*10) % 2000 / 2000.0 * Math.PI * 2) * 60);
             int x0 = (game.time + i * 8) % 400 - 200;
@@ -38,6 +36,7 @@ public class Screen extends Bitmap {
         }
 
         viewport.render(game);
+        viewport.postProcess();
         draw(viewport, 0, 0);
         draw(gamePanel, 0, height - PANEL_HEIGHT);
         //draw(testBitmap, 40, 40);
