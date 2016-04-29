@@ -113,6 +113,7 @@ public class TupiComponent extends Canvas implements Runnable {
         }
 
         Graphics g = bs.getDrawGraphics();
+        g.fillRect(0, 0, getWidth(), getHeight());
         g.drawImage(img, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
         g.dispose();
         bs.show();
